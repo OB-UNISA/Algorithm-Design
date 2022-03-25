@@ -18,7 +18,7 @@ def alg(a, i, j, x):
 
 LIM = 15
 
-for k in range(7):
+for k in range(LIM // 2):
     array = [randint(0, LIM) for _ in (range(randint(1, LIM)))]
     array.sort()
     _n = len(array)
