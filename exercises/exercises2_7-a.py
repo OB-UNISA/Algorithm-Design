@@ -2,8 +2,9 @@ from random import randint
 from termcolor import colored
 from collections import deque
 
+
 def alg(a, i, j, k):
-    if i == j or k ==0:
+    if i == j or k == 0:
         return a[i]
     else:
         return a[j - k + 1]

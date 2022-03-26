@@ -2,13 +2,14 @@ from random import randint
 from termcolor import colored
 from collections import deque
 
+
 def alg(a, i, j, n):
     if i == j:
         return 1
     if j - i == 1:
         if a[i] > a[j]:
             return n - j
-    
+
     m = (i + j) // 2
     if a[m-1] > a[m]:
         return n - m
@@ -30,7 +31,6 @@ for _ in range(LIM // 2):
 
     alg_res = alg(array, 0, _n - 1, _n)
 
-    expected_value =  [0, _n] if _k == _n or _k  == 0 else [_k]
-            
+    expected_value = [0, _n] if _k == _n or _k == 0 else [_k]
 
     print(f'array: {array}\nn : {_n}\nk: {_k}\nexpected result: {expected_value}\nalg result: {alg_res}\nsame results: {colored("True", "green") if alg_res in expected_value else colored("False", "red")}\n')

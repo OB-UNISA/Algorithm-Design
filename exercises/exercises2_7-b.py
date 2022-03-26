@@ -2,6 +2,7 @@ from random import randint
 from termcolor import colored
 from collections import deque
 
+
 def alg(a, i, j):
     if i == j:
         return a[i]
