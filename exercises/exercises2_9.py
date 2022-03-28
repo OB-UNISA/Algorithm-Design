@@ -19,11 +19,11 @@ LIM = 15
 arrays = [[-2, -1, 0, 1, 2, 3, 4], [0, 1, 1, 1, 1, 1],
           [0, 0, 0, 0, 1], [-1, -1, 0, 1, 2, 2, 3], [0, 1]]
 
-# the code below always place the '0' at a[n-2]
 for _ in range(LIM // 2):
     array = []
     flag = False
-    r = randint(LIM // 2 * -1, 0)
+    init = randint(LIM // 3 * -1, 0)
+    r = init
     array.append(r)
     l = 0
     while True:
@@ -33,9 +33,9 @@ for _ in range(LIM // 2):
             r = randint(r - 1, r + 1)
             array.append(r)
         else:
-            r += 1
+            r += randint(0, 1)
             array.append(r)
-        if r > 0:
+        if r > abs(init):
             break
         l += 1
     arrays.append(array)
