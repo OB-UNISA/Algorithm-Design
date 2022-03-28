@@ -14,8 +14,10 @@ def alg(a, i, j):
     else:
         return alg(a, m + 1, j)
 
+
 LIM = 15
-arrays = [[-2, -1, 0, 1, 2, 3, 4], [0, 1, 1, 1, 1, 1], [0, 0, 0, 0, 1], [-1, -1, 0, 1, 2, 2, 3], [0, 1]]
+arrays = [[-2, -1, 0, 1, 2, 3, 4], [0, 1, 1, 1, 1, 1],
+          [0, 0, 0, 0, 1], [-1, -1, 0, 1, 2, 2, 3], [0, 1]]
 
 # the code below always place the '0' at a[n-2]
 for _ in range(LIM // 2):
@@ -25,7 +27,7 @@ for _ in range(LIM // 2):
     array.append(r)
     l = 0
     while True:
-        if l == LIM //2:
+        if l == LIM // 2:
             flag = True
         if not flag:
             r = randint(r - 1, r + 1)
@@ -47,6 +49,5 @@ for array in arrays:
     for ind in range(_n):
         if array[ind] == 0:
             expected_value.append(ind)
-        
 
     print(f'array: {array}\nn : {_n}\nexpected result: {expected_value}\nalg result: {alg_res}\nsame results: {colored("True", "green") if alg_res in expected_value else colored("False", "red")}\n')
