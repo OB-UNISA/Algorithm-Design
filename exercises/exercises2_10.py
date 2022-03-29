@@ -3,8 +3,6 @@ from termcolor import colored
 
 
 def alg(a, i, j):
-    if i == j:
-        return "non c'è"
     if j - i == 1:
         if a[i] < 0 and a[j] > 0:
             return i
@@ -21,11 +19,15 @@ def alg(a, i, j):
 LIM = 15
 
 for _ in range(LIM // 2):
-    array = [randint(LIM * -1, LIM) for _ in (range(randint(1, LIM)))]
+    array = [randint(LIM * -1, LIM) for _ in (range(randint(2, LIM)))]
     array.sort()
+    # to remove duplicates
+    array = list(dict.fromkeys(array))
     _n = len(array)
     if array[_n - 1] < 0:
         array.append(array[_n - 1] * -1 + 1)
+    if array[0] > 0:
+        array[0] = array[0] * -1
 
     alg_res = alg(array, 0, _n - 1)
 
