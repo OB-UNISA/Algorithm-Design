@@ -28,7 +28,7 @@ for _ in range(LIM // 2):
         array.append(array[_n - 1] * -1 + 1)
 
     alg_res = alg(array, 0, _n - 1)
-    
+
     expected_value = "non c'è"
     for ind in range(_n - 1):
         if array[ind] < 0 and array[ind + 1] > 0:
