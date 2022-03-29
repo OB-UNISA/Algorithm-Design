@@ -23,11 +23,11 @@ for _ in range(LIM // 2):
     array.sort()
     # to remove duplicates
     array = list(dict.fromkeys(array))
-    _n = len(array)
-    if array[_n - 1] < 0:
-        array.append(array[_n - 1] * -1 + 1)
+    if array[- 1] < 0:
+        array.append(array[- 1] * -1 + 1)
     if array[0] > 0:
         array[0] = array[0] * -1
+    _n = len(array)
 
     alg_res = alg(array, 0, _n - 1)
 
