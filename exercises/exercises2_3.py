@@ -1,5 +1,8 @@
 from random import randint
 from termcolor import colored
+import colorama
+
+colorama.init()
 
 
 def alg(a, i, j, x):

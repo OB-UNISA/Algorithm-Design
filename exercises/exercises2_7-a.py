@@ -1,6 +1,9 @@
 from random import randint
 from termcolor import colored
 from collections import deque
+import colorama
+
+colorama.init()
 
 
 def alg(a, i, j, k):
