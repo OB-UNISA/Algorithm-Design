@@ -13,7 +13,7 @@ def alg(a, i, j, n):
     if a[m] == 0:
         return alg(a, m + 1, j, n)
     else:
-        return alg(a,i, m, n)
+        return alg(a, i, m, n)
 
 
 LIM = 15
