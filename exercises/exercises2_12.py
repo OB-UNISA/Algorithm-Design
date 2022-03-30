@@ -9,7 +9,7 @@ def alg(a, i, j):
     m = (i + j) // 2
     if a[m] == a[m + 1] and a[m] == a[m - 1]:
         return 1 + alg(a, i, m) + alg(a, m, j)
-    elif a[m] == a[m -1]:
+    elif a[m] == a[m - 1]:
         return alg(a, i, m) + alg(a, m + 1, j)
     elif a[m] == a[m + 1]:
         return alg(a, i, m - 1) + alg(a, m, j)
@@ -33,7 +33,6 @@ for _ in range(LIM // 2):
             array.insert(flag, array[flag])
             array.insert(flag, array[flag])
     _n = len(array)
-    
 
     alg_res = alg(array, 0, _n - 1)
 
