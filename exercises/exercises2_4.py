@@ -7,27 +7,37 @@ colorama.init()
 
 def findL(a, i, j, L):
     if i == j:
-        if a[i] > L:
+        if a[i] >= L:
             return i
         else:
             return "non c'è"
-        
-        m = (i + j) // 2
-        if a[m] > L:
-            return findL(a, i, m, L)
-        else:
-            return findL(a, m + 1, j, L)
-            
-            
+
+    m = (i + j) // 2
+    if a[m] >= L:
+        return findL(a, i, m, L)
+    else:
+        return findL(a, m + 1, j, L)
+
+
 def findU(a, i, j, U):
     if i == j:
-        if a[i] < U:
+        if a[i] <= U:
             return i
         else:
             return "non c'è"
-    
+    # need to consider where there are 2 elements at the end of the recursion because it may loop.
+    # E.g_ i = 5, j = 7, m = 6, a[m] <= U. In the next recursion we will have i = 6, j = 7, m = 6. m value is the same
+    # as the previous one, so we will loop in findU(a, 6, 7, U).
+    if j - i == 1:
+        if a[j] <= U:
+            return j
+        elif a[i] <= U:
+            return i
+        else:
+            return "non c'è"
+
     m = (i + j) // 2
-    if a[m] < U:
+    if a[m] <= U:
         return findU(a, m, j, U)
     else:
         return findU(a, i, m - 1, U)
@@ -42,21 +52,25 @@ def alg(a, i, j, L, U):
 
     indL = findL(a, i, j, L)
     indU = findU(a, i, j, U)
-    
+
     if indL == "non c'è" or indU == "non c'è":
         return 0
     else:
-        return indU - indL
+        return indU - indL + 1
 
 LIM = 15
 for k in range(LIM // 2):
-    array = [randint(LIM * -1, LIM) for _ in (range(randint(1, LIM)))]
+    array = [-15, -10, -5, -4, -3, 0, 4, 15]#[randint(LIM * -1, LIM) for _ in (range(randint(1, LIM)))]
     array.sort()
     array = list(dict.fromkeys(array))
     _n = len(array)
-    _L = randint(LIM * -1, LIM)
-    _U = randint(_L, LIM)
+    if randint(0, 3) == 1:
+        _L = -15#randint(LIM * -1, max(array))
+    else:
+        _L = -15#randint(LIM * -1, LIM)
+    _U = 15#randint(_L + 1, LIM)
 
+    print(f'Array: {array}\n L: {_L}\n U: {_U}')
     alg_res = alg(array, 0, _n - 1, _L, _U)
 
     expected_value = 0
