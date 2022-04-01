@@ -11,21 +11,21 @@ def findL(a, i, j, L):
             return i
         else:
             return "non c'è"
-        
+
         m = (i + j) // 2
         if a[m] > L:
             return findL(a, i, m, L)
         else:
             return findL(a, m + 1, j, L)
-            
-            
+
+
 def findU(a, i, j, U):
     if i == j:
         if a[i] < U:
             return i
         else:
             return "non c'è"
-    
+
     m = (i + j) // 2
     if a[m] < U:
         return findU(a, m, j, U)
@@ -42,11 +42,12 @@ def alg(a, i, j, L, U):
 
     indL = findL(a, i, j, L)
     indU = findU(a, i, j, U)
-    
+
     if indL == "non c'è" or indU == "non c'è":
         return 0
     else:
         return indU - indL
+
 
 LIM = 15
 for k in range(LIM // 2):
