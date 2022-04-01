@@ -58,6 +58,7 @@ def alg(a, i, j, L, U):
     else:
         return indU - indL + 1
 
+
 LIM = 15
 for k in range(LIM // 2):
     array = [randint(LIM * -1, LIM) for _ in (range(randint(1, LIM)))]
@@ -68,7 +69,7 @@ for k in range(LIM // 2):
         _L = randint(LIM * -1, max(array))
     else:
         _L = randint(LIM * -1, LIM)
-    _U = randint(_L + 1, LIM  + LIM // 5)
+    _U = randint(_L + 1, LIM + LIM // 5)
 
     alg_res = alg(array, 0, _n - 1, _L, _U)
 
