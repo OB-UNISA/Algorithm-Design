@@ -58,17 +58,19 @@ def alg(a, i, j, L, U):
     else:
         return indU - indL + 1
 
+
 LIM = 15
 for k in range(LIM // 2):
-    array = [-15, -10, -5, -4, -3, 0, 4, 15]#[randint(LIM * -1, LIM) for _ in (range(randint(1, LIM)))]
+    # [randint(LIM * -1, LIM) for _ in (range(randint(1, LIM)))]
+    array = [-15, -10, -5, -4, -3, 0, 4, 15]
     array.sort()
     array = list(dict.fromkeys(array))
     _n = len(array)
     if randint(0, 3) == 1:
-        _L = -15#randint(LIM * -1, max(array))
+        _L = -15  # randint(LIM * -1, max(array))
     else:
-        _L = -15#randint(LIM * -1, LIM)
-    _U = 15#randint(_L + 1, LIM)
+        _L = -15  # randint(LIM * -1, LIM)
+    _U = 15  # randint(_L + 1, LIM)
 
     print(f'Array: {array}\n L: {_L}\n U: {_U}')
     alg_res = alg(array, 0, _n - 1, _L, _U)
