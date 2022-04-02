@@ -9,13 +9,13 @@ def alg(a, i, j):
     if i == j:
         return 0
     if j - i == 1:
-        if a[i] * a[i + 1] > 0:
+        if (a[i] > 0 and  a[i + 1] > 0) or (a[i] < 0 and a[i+1] < 0):
             return 1
         else:
             return 0
 
     m = (i + j) // 2
-    if a[m] * a[m + 1] > 0:
+    if (a[m] > 0 and a[m + 1] > 0) or (a[m] < 0 and a[m + 1] < 0):
         return 1 + alg(a, i, m) + alg(a, m + 1, j)
     else:
         return alg(a, i, m) + alg(a, m + 1, j)
