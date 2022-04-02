@@ -9,7 +9,7 @@ def alg(a, i, j):
     if i == j:
         return 0
     if j - i == 1:
-        if (a[i] > 0 and  a[i + 1] > 0) or (a[i] < 0 and a[i+1] < 0):
+        if (a[i] > 0 and a[i + 1] > 0) or (a[i] < 0 and a[i+1] < 0):
             return 1
         else:
             return 0
