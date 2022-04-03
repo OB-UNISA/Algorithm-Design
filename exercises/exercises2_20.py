@@ -8,7 +8,7 @@ colorama.init()
 def alg(a, i, j):
     if i == j:
         return a[i]
-        
+
     m = (i + j) // 2
     if a[m] == m:
         return alg(a, m + 1, j)
@@ -24,7 +24,7 @@ for _ in range(LIM // 2):
     r = randint(1, _n - 1)
     array.insert(r, r)
     _n += 1
-    
+
     alg_res = alg(array, 0, _n - 1)
 
     expected_value = -1
