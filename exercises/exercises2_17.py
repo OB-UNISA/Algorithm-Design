@@ -5,6 +5,8 @@ import colorama
 colorama.init()
 
 # it does not work when multiplying 2 negative numbers the result is N
+
+
 def alg(a, i, j, N):
     if i == j:
         return False
