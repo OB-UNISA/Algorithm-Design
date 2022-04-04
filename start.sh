@@ -8,4 +8,10 @@ echo "Enter the number of exercise in the block"
 read number
 echo "You selected exercise $number"
 
-python exercises${block}_${number}.py
+answer=y
+while [ $answer = y ]
+do
+	python exercises${block}_${number}.py
+	echo "Do you want to rerun the test? (y/n)"
+	read answer
+done
