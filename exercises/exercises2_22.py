@@ -21,7 +21,6 @@ for _ in range(LIM // 2):
     array = [randint(0, LIM) for _ in range(1, randint(2, LIM))]
     _n = len(array)
 
-    print(array)
     alg_res = alg(array, 0, _n - 1, _n)
 
     expected_value = []
