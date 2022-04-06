@@ -6,9 +6,6 @@ colorama.init()
 
 
 def alg(a, i, j):
-    if i == j:
-        return i
-
     m = (i + j) // 2
     if a[m] == 0:
         return m
