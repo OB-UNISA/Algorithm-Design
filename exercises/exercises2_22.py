@@ -20,7 +20,7 @@ LIM = 15
 for _ in range(LIM // 2):
     array = [randint(0, LIM) for _ in range(1, randint(2, LIM))]
     _n = len(array)
-    
+
     print(array)
     alg_res = alg(array, 0, _n - 1, _n)
 
@@ -32,7 +32,7 @@ for _ in range(LIM // 2):
             expected_value.append(0)
         if array[_n - 1] <= array[_n - 2]:
             expected_value.append(_n - 1)
-        
+
         for ind in range(1, _n - 1):
             if array[ind] <= array[ind - 1] and array[ind] <= array[ind + 1]:
                 expected_value.append(ind)
