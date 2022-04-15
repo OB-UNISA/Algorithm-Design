@@ -25,7 +25,7 @@ def findU(a, i, j, U):
             return i
         else:
             return "non c'è"
-    # need to consider where there are 2 elements at the end of the recursion because it may loop.
+    # need to consider when there are 2 elements at the end of the recursion because it may loop.
     # E.g_ i = 5, j = 7, m = 6, a[m] <= U. In the next recursion we will have i = 6, j = 7, m = 6. m value is the same
     # as the previous one, so we will loop in findU(a, 6, 7, U).
     if j - i == 1:
@@ -63,6 +63,7 @@ LIM = 15
 for k in range(LIM // 2):
     array = [randint(LIM * -1, LIM) for _ in (range(randint(1, LIM)))]
     array.sort()
+    # comment the line below if you want to test when the array has elements that can have same value
     array = list(dict.fromkeys(array))
     _n = len(array)
     if randint(0, 3) == 1:
