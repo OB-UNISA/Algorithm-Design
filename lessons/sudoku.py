@@ -15,7 +15,10 @@ def rigaColonnaBlocco(l):
 
 def print_grid(grid):
     for i in range(0, 81, 9):
-        print(grid[i:i+9])
+        for j in range(i, i + 9):
+            print(grid[j], end='')
+
+        print()
 
     print()
 
@@ -35,23 +38,21 @@ def inizializza(a):
 
 
 def sudoku(a, l):
-    print(l)
-    if l == 81:
+    if l == 80:
         return x
     else:
-        if a[l] != 0:
-            x[l] = a[l]
+        if a[l + 1] != 0:
+            x[l + 1] = a[l + 1]
             sudoku(a, l + 1)
         else:
-            i, j, k = rigaColonnaBlocco(l)
+            i, j, k = rigaColonnaBlocco(l + 1)
             scelta = set([1, 2, 3, 4, 5, 6, 7, 8, 9]) - \
                 set().union(R[i], C[j], B[k])
-            print(scelta)
             for y in scelta:
                 R[i].add(y)
                 C[j].add(y)
                 B[k].add(y)
-                x[l] = y
+                x[l + 1] = y
 
                 sudoku(a, l + 1)
 
@@ -84,7 +85,7 @@ def main():
     inizializza(game)
     print_grid(game)
 
-    sudoku(game, 0)
+    sudoku(game, -1)
     print_grid(x)
 
 
