@@ -7,9 +7,7 @@ def alg(SOL, k, n):
             SOL.append(x)
             alg(SOL, k + 1, n)
             SOL.pop()
-            
-            
+
 
 _n = int(input('n: '))
 alg([], -1, _n)
-    
