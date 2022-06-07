@@ -6,7 +6,6 @@ def alg(SOL, k, n):
         for x in ['a', 'b', 'c']:
             SOL[k + 1] = x
             alg(SOL, k + 1, n)
-            
 
 
 _n = int(input('n: '))
